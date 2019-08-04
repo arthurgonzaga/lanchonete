@@ -12,7 +12,6 @@ public class Erro {
     public void ajuste(){
         Interface o =new Interface();
          o.visão(); 
-         System.out.println("Código Inválido");
     }
 
 }
