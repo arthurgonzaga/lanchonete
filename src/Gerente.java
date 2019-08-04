@@ -1,6 +1,8 @@
 import java.util.Scanner;
 public class Gerente {
   public void administra(){
+      Scanner ler = new Scanner(System.in);
+        int p;
         System.out.println("\n");
         System.out.println("\n");
         System.out.println("                                Gerente                                   ");
@@ -11,5 +13,10 @@ public class Gerente {
         System.out.println("|2|  Realizar um novo pedido");
         System.out.println("|3|  Sair");
         System.out.println("-------------------------------------------------------------------------");
+        p = ler.nextInt();
+        if (p==3){ 
+        Interface o =new Interface();
+         o.visão();
     }  
+  }
 }
