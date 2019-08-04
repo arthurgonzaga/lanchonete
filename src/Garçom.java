@@ -1,15 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- *
- * @author weslley
- */
+import java.util.Scanner;
 public class Garçom {
     public void servico(){
-        System.out.println("1111111");
+        Scanner ler = new Scanner(System.in);
+        int P;
+        System.out.println("\n");
+        System.out.println("\n");
+        System.out.println("                                GARÇOM                                   ");
+        System.out.println("-------------------------------------------------------------------------");
+        System.out.println("Por Favor Informe Qual e Operação Que Deseja Realizar?");
+        System.out.println("-------------------------------------------------------------------------");
+        System.out.println("|1|  Visualizar o cardápio");
+        System.out.println("|2|  Realizar um novo pedido");
+        System.out.println("|3|  Sair");
+        System.out.println("-------------------------------------------------------------------------");
+        P = ler.nextInt();
+        
     }
 }

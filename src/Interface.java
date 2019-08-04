@@ -1,7 +1,8 @@
+
 import java.util.Scanner;
 public class Interface {
-    public static void main(String[] args) {
-       Scanner ler = new Scanner(System.in);
+    public void visão(){
+        Scanner ler = new Scanner(System.in);
         int n;
        System.out.println("                             BEM-VINDO                                   ");
        System.out.println("-------------------------------------------------------------------------");
@@ -29,3 +30,5 @@ public class Interface {
        }
         }
 }
+    
+

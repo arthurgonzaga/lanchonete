@@ -10,7 +10,9 @@
  */
 public class Erro {
     public void ajuste(){
-        System.out.println("Código Inválido");
+        Interface o =new Interface();
+         o.visão(); 
+         System.out.println("Código Inválido");
     }
 
 }
