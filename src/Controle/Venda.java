@@ -4,13 +4,12 @@
  * and open the template in the editor.
  */
 package Controle;
-
-/**
- *
- * @author Lenovo
- */
+import java.util.Scanner;
 public class Venda {
     public void Pedido(){
+        Scanner ler = new Scanner(System.in);
+        int p;
+        int P = ler.nextInt();
         
     }
 }
