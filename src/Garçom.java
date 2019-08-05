@@ -1,4 +1,5 @@
 
+
 import Controle.Venda;
 import java.io.BufferedReader;
 import java.util.Scanner;
@@ -41,10 +42,9 @@ public class Garçom {
            Venda w =new Venda();
          w.Pedido(); 
         }  else if (t==2) {  //Pedido//
-     Interface o =new Interface();
-         o.visão();
-       }
-          
+     Venda w =new Venda();
+         w.Pedido();
+       }   
        } else if (P==2) {  //Pedido//
      Venda w =new Venda();
          w.Pedido(); 

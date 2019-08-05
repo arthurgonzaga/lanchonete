@@ -9,7 +9,7 @@ ID       NOME                    PREÇO
 |4|     X-BACON                  R$10,00
 |5|     X-CALABRESA              R$7,00
 |6|     X-TUDO                   R$12,00
-|7|     BATATA FRITA             R$5,50
+|7|     BATATA FRITA             R$5,00
 |8|     REFRIGERANTE LATA 350ML  R$3,00
 |9|     REFRIGERANTE 2 LITROS    R$7,00
 -------------------------------------------------------
