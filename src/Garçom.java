@@ -1,5 +1,9 @@
 
+import java.io.BufferedReader;
 import java.util.Scanner;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 public class Garçom {
     public void servico(){
         Scanner ler = new Scanner(System.in);
@@ -16,7 +20,17 @@ public class Garçom {
         System.out.println("-------------------------------------------------------------------------");
         P = ler.nextInt();
         if (P==1){ //Cardápio//
-        
+        File arquivo=new File("C:\\Documents\\NetBeansProjects\\lanchonete\\lanchonete\\Arquivo");
+        try{
+        FileReader o = new FileReader(arquivo); 
+         BufferedReader ob =new BufferedReader(o);
+         String linha = ob.readLine(); 
+            while(linha !=null){
+           System.out.println(linha);
+           linha = ob.readLine(); 
+        }
+        }catch (IOException ex) {
+        }
        } else if (P==2) {  //Pedido//
      
        }
