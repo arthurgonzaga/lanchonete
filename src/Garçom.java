@@ -20,7 +20,7 @@ public class Garçom {
         System.out.println("-------------------------------------------------------------------------");
         P = ler.nextInt();
         if (P==1){ //Cardápio//
-        File arquivo=new File("C:\\Documents\\NetBeansProjects\\lanchonete\\lanchonete\\Arquivo");
+        File arquivo=new File("Cardapio.txt");
         try{
         FileReader o = new FileReader(arquivo); 
          BufferedReader ob =new BufferedReader(o);
