@@ -1,21 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Controle;
+import java.io.File;
 import java.util.Scanner;
 public class Venda {
     public void Pedido(){
         Scanner ler = new Scanner(System.in);
-        int P=1,n;
+        int z=2,n;
         float  TXBURGUER = 0,TXSALADA = 0,TXEGG = 0,TXBACON = 0,TXCALABRESA = 0,TXTUDO = 0,TBATATA = 0,TLATA350M = 0,TREFRIGERANTE2L=0,Q,Total;
         int QXBURGUER = 0,QXSALADA,QXEGG,QXBACON,QXCALABRESA,QXTUDO,QBATATA,QLATA350M,QTREFRIGERANTE2L; 
-        while(P==1){
+        while(z==2){
             System.out.println("-------------------------------------------------------------------------");
             System.out.println("Adicione o ID do Produto");
             System.out.println("-------------------------------------------------------------------------");
-           n = ler.nextInt();
+            n = ler.nextInt();
             if (n==1){
             System.out.println("X-BURGUER PREÇO:R$6,00");   
             System.out.println("Quantidade");
@@ -74,7 +71,8 @@ public class Venda {
             System.out.println("O Total Fianal e:");
             Total=TXBURGUER+TXSALADA+TXEGG+TXBACON+TXCALABRESA+TXTUDO+TBATATA+TLATA350M+TREFRIGERANTE2L;
             System.out.println(Total+"R$");
+            System.out.println("O Total Fianal e:");
+        }
             
+            }
         }
-        }
-}
