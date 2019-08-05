@@ -1,4 +1,5 @@
 
+import Controle.Venda;
 import java.io.BufferedReader;
 import java.util.Scanner;
 import java.io.File;
@@ -7,7 +8,7 @@ import java.io.IOException;
 public class Garçom {
     public void servico(){
         Scanner ler = new Scanner(System.in);
-        int P;
+        int P,t;
         System.out.println("\n");
         System.out.println("\n");
         System.out.println("                                GARÇOM                                   ");
@@ -31,8 +32,22 @@ public class Garçom {
         }
         }catch (IOException ex) {
         }
+        System.out.println("-------------------------------------------------------------------------");
+        System.out.println("|1|  Realizar o pedido");
+        System.out.println("|2|  Sair");
+        System.out.println("-------------------------------------------------------------------------");
+        t = ler.nextInt();
+          if (t==1){
+           Venda w =new Venda();
+         w.Pedido(); 
+        }  else if (t==2) {  //Pedido//
+     Interface o =new Interface();
+         o.visão();
+       }
+          
        } else if (P==2) {  //Pedido//
-     
+     Venda w =new Venda();
+         w.Pedido(); 
        }
         else if (P==3) {  //Sair//
      Interface o =new Interface();
