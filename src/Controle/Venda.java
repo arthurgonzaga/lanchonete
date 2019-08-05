@@ -6,7 +6,7 @@ public class Venda {
     @SuppressWarnings("empty-statement")
     public void Pedido(){
         Scanner ler = new Scanner(System.in);
-        int z=2,n,o;
+        int z=2,n;
         float  TXBURGUER = 0,TXSALADA = 0,TXEGG = 0,TXBACON = 0,TXCALABRESA = 0,TXTUDO = 0,TBATATA = 0,TLATA350M = 0,TREFRIGERANTE2L=0,Q,Total;
         int QXBURGUER = 0,QXSALADA,QXEGG,QXBACON,QXCALABRESA,QXTUDO,QBATATA,QLATA350M,QTREFRIGERANTE2L; 
         while(z==2){
@@ -72,18 +72,16 @@ public class Venda {
             System.out.println("O Total Fianal e:");
             Total=TXBURGUER+TXSALADA+TXEGG+TXBACON+TXCALABRESA+TXTUDO+TBATATA+TLATA350M+TREFRIGERANTE2L;
             System.out.println(Total+"R$");
+            Scanner g = new Scanner(System.in);
+            int o;
             System.out.println("Continuar (0)");
             System.out.println("Concluir Venda(1)");
             System.out.println("Cancelar Venda(2)");
-            o= ler.nextInt();
-            if (o==2){
-         Gatilho_venda x =new Gatilho_venda();
-        x.recarregar();
-            }else if (o==1) { 
+            //Em construção//
                 
             }
           
         }
             
             }
-        }
+        
