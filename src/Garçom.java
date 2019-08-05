@@ -15,9 +15,14 @@ public class Garçom {
         System.out.println("|3|  Sair");
         System.out.println("-------------------------------------------------------------------------");
         P = ler.nextInt();
-        if (P==3){ 
-        Interface o =new Interface();
+        if (P==1){ //Cardápio//
+        
+       } else if (P==2) {  //Pedido//
+     
+       }
+        else if (P==3) {  //Sair//
+     Interface o =new Interface();
          o.visão();
-       } 
+       }
     }
 }
