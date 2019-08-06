@@ -4,11 +4,11 @@ package lanchonete;
 import lanchonete.usuarios.Garçom;
 import lanchonete.usuarios.Gerente;
 import lanchonete.usuarios.Cozinheiro;
-import Controle.Venda;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /*
@@ -23,16 +23,20 @@ import java.util.Scanner;
 public class Escolher {
 
     private Scanner ler;
-    private Venda venda;
-
+    public static ArrayList<Pedido> fila = new ArrayList<>();
+    
+    public Escolher(ArrayList<Pedido> fila) {
+        ler = new Scanner(System.in);
+        this.fila = fila;
+        Garçom garçom = new Garçom(true, fila);
+    }
+    
     public Escolher() {
         ler = new Scanner(System.in);
-        venda = new Venda();
     }
 
     public Escolher(String tipo, int entrada) {
         ler = new Scanner(System.in);
-        venda = new Venda();
         switch (tipo) {
             case Garçom.TIPO:
                 escolherGarçom(entrada);
@@ -46,25 +50,46 @@ public class Escolher {
                 escolherGerente(entrada);
                 break;
             default:
-                new Erro();
+                new Inicio(fila);
         }
     }
 
+    public Escolher(String tipo, int entrada, ArrayList<Pedido> fila) {
+        ler = new Scanner(System.in);
+        this.fila = fila;
+        switch (tipo) {
+            case Garçom.TIPO:
+                escolherGarçom(entrada);
+                break;
+
+            case Cozinheiro.TIPO:
+                escolherCozinheiro(entrada);
+                break;
+
+            case Gerente.TIPO:
+                escolherGerente(entrada);
+                break;
+            default:
+                new Inicio(fila);
+        }
+    }
+    
     private void escolherGarçom(int entrada) {
+        Garçom garçom = new Garçom(true, fila);
         switch (entrada) {
             case 1:
                 Garçom.lerCardapio();
                 Garçom.perguntarPedido();
                 int entrada2 = ler.nextInt();
                 if (entrada2 == 1) {
-                    venda.Pedido();
+                    garçom.fazerPedido();
                 } else {
                     new Inicio();
                 }
                 break;
 
             case 2:
-                venda.Pedido();
+                garçom.fazerPedido();
                 break;
 
             case 3:
@@ -79,16 +104,18 @@ public class Escolher {
     private void escolherCozinheiro(int entrada) {
         switch (entrada) {
             case 1:
-
+                Cozinheiro.verificarProximoDaFila();
                 break;
             case 2:
-
+                System.out.print("id: ");
+                int id = ler.nextInt();
+                Cozinheiro.atendido(id);
                 break;
             case 3:
-                new Inicio();
+                new Inicio(fila);
                 break;
             default:
-                escolherGerente(entrada);
+                escolherCozinheiro(entrada);
         }
     }
 
@@ -101,28 +128,27 @@ public class Escolher {
 
                 break;
             case 3:
-                new Inicio();
+                new Inicio(fila);
                 break;
             default:
                 escolherGerente(entrada);
         }
     }
 
-    public static void escolherInicio(int entrada) {
+    public static void escolherInicio(int entrada, ArrayList<Pedido> fila) {
         switch (entrada) {
             case 1:
                 new Garçom();
                 break;
             case 2:
-                new Cozinheiro();
+                new Cozinheiro(fila);
                 break;
             case 3:
                 new Gerente();
                 break;
             default:
-                new Erro();
+                new Inicio(fila);
 
         }
     }
-
 }

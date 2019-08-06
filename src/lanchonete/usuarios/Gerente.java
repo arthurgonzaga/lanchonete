@@ -3,6 +3,7 @@ package lanchonete.usuarios;
 
 
 
+import java.time.LocalDate;
 import lanchonete.Escolher;
 import java.util.Scanner;
 import lanchonete.Escolher;
@@ -30,5 +31,13 @@ public class Gerente {
                 + "|2|  Verificar quanto foi vendido em uma determinada data\n"
                 + "|3|  Sair\n"
                 + "-------------------------------------------------------------------------");
+    }
+    
+    public static void consultarQuantidadeVendido(int idProduto){
+        
+    }
+    
+    public static void verificarVendasNoDia(LocalDate dia){
+        
     }
 }
