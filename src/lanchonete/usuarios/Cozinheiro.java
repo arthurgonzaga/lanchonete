@@ -1,7 +1,5 @@
 package lanchonete.usuarios;
 
-
-
 import java.util.ArrayList;
 import lanchonete.Escolher;
 import java.util.Scanner;
@@ -10,21 +8,22 @@ import lanchonete.Pedido;
 import lanchonete.Inicio;
 import lanchonete.Produto;
 
-public class Cozinheiro{
+public class Cozinheiro {
+
     public static final String TIPO = "COZINHEIRO";
-    
+
     private Scanner ler;
 
     private static ArrayList<Pedido> fila = new ArrayList<>();
-    
-    public Cozinheiro(ArrayList<Pedido> fila){
+
+    public Cozinheiro(ArrayList<Pedido> fila) {
         this.fila = fila;
         ler = new Scanner(System.in);
         cozinheiroOperações();
         int entrada = ler.nextInt();
         new Escolher(TIPO, entrada, this.fila);
     }
-    
+
     private void cozinheiroOperações() {
         System.out.println(
                 "\n"
@@ -40,26 +39,36 @@ public class Cozinheiro{
                 + "-------------------------------------------------------------------------\n"
         );
     }
-    
-    public static void verificarProximoDaFila(){
+
+    public static void verificarProximoDaFila() {
         float total = 0f;
-        ArrayList<Produto> produtos = fila.get(0).getProdutos();
-        for(int indice = 0; indice < produtos.size(); indice++){
-            float preçoNoIndice = produtos.get(indice).getPreço();
-            int quantidadeNoIndice = produtos.get(indice).getQuantidade();
-            total+= preçoNoIndice*quantidadeNoIndice;
-            System.out.println("\n"+produtos.get(indice).getNome() + " R$" 
-                    + produtos.get(indice).getPreço() 
-                    + " | " + produtos.get(indice).getQuantidade()
-                    + " unidades");
+        if (fila.size() > 0) {
+            ArrayList<Produto> produtos = fila.get(0).getProdutos();
+            for (int indice = 0; indice < produtos.size(); indice++) {
+                float preçoNoIndice = produtos.get(indice).getPreço();
+                int quantidadeNoIndice = produtos.get(indice).getQuantidade();
+                total += preçoNoIndice * quantidadeNoIndice;
+                System.out.println("\n" + produtos.get(indice).getNome() + " R$"
+                        + produtos.get(indice).getPreço()
+                        + " | " + produtos.get(indice).getQuantidade()
+                        + " unidades");
+            }
+            System.out.println("---------------------------------\n"
+                    + "Total: R$" + total);
+            new Inicio(fila);
+        }else{
+            System.out.println("Não há pedidos");
+            new Inicio(fila);
         }
-        System.out.println("---------------------------------\n"
-                + "Total: R$"+total);
-        new Inicio(fila);
     }
-    
-    public static void atendido(int id){
-        fila.remove(id);
-        new Inicio(fila);
+
+    public static void atendido(int id) {
+        if(fila.size() == id || fila.size() > id){
+            fila.remove(id);
+            new Inicio(fila);
+        }else{
+            System.out.println("Pedido não encontrado");
+            new Inicio(fila);
+        }
     }
 }

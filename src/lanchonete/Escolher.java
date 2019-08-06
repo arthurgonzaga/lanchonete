@@ -4,10 +4,6 @@ package lanchonete;
 import lanchonete.usuarios.Garçom;
 import lanchonete.usuarios.Gerente;
 import lanchonete.usuarios.Cozinheiro;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -25,16 +21,22 @@ public class Escolher {
     private Scanner ler;
     public static ArrayList<Pedido> fila = new ArrayList<>();
     
+    /**
+    *
+    * Constructors
+    * 
+    */
+    
+    public Escolher() {
+        ler = new Scanner(System.in);
+    }
+    
     public Escolher(ArrayList<Pedido> fila) {
         ler = new Scanner(System.in);
         this.fila = fila;
         Garçom garçom = new Garçom(true, fila);
     }
     
-    public Escolher() {
-        ler = new Scanner(System.in);
-    }
-
     public Escolher(String tipo, int entrada) {
         ler = new Scanner(System.in);
         switch (tipo) {
@@ -74,6 +76,12 @@ public class Escolher {
         }
     }
     
+    
+    /**
+    *
+    * Methods
+    * 
+    */
     private void escolherGarçom(int entrada) {
         Garçom garçom = new Garçom(true, fila);
         switch (entrada) {

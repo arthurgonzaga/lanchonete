@@ -169,6 +169,7 @@ public class Garçom {
             int quantidadeNoIndice = carrinho.get(indice).getQuantidade();
             total+= preçoNoIndice*quantidadeNoIndice;
         }
+        System.out.println("ID do pedido: "+ fila.size());
         System.out.println("O Total Final é: R$"+ total);
         Pedido novoPedido = new Pedido(fila.size(), carrinho);
         fila.add(novoPedido);
