@@ -38,7 +38,7 @@ public class Inicio {
     }
     
     private void printFunçoes() {
-        System.out.println("\n\n\n\n-------------------------------------------------------------------------\n"
+        System.out.println("\n\n-------------------------------------------------------------------------\n"
                 + "Por Favor Informe Qual e Sua Função Utilizando o Codigo da Lista Abaixo \n"
                 + "-------------------------------------------------------------------------\n"
                 + "ID   Nome\n"

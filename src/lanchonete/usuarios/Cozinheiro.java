@@ -63,7 +63,7 @@ public class Cozinheiro {
     }
 
     public static void atendido(int id) {
-        if(fila.size() == id || fila.size() > id){
+        if(fila.size() < id){
             fila.remove(id);
             new Inicio(fila);
         }else{
