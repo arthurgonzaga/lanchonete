@@ -1,3 +1,5 @@
+package lanchonete;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -7,11 +9,11 @@
 /**
  *
  * @author weslley
+ * 
  */
 public class Erro {
-    public void ajuste(){
-        Interface o =new Interface();
-         o.visão(); 
-    }
 
+    public Erro(){
+        new Inicio();
+    }
 }
